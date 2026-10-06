@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oniet</title>
+
+    <style>
+
+        table{
+            width: 80%;
+            border-collapse: collapse;
+            margin-left: 10%;
+        }
+        table th, table td{
+            padding: 8px 12px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        .tablita3{
+            width: 80%;
+            margin-left: 10%;
+            
+        }
+        .thtd3{
+            padding: 8px 12px;
+            text-align: center;
+        }
+</style>
+</head>
+
+<body>
+    <table id="tabla1">
+        <thead>
+            <tr>
+                <th>
+                    Posicion
+                </th>
+                <th>
+                    Cadena
+                </th>
+                <th>
+                    Reservas
+                </th>
+                <th>
+                    Noches
+                </th>
+                <th>
+                    Ingreso estimado [$]
+                </th>
+            </tr>
+        </thead>
+        <tbody id="body1">
+
+        </tbody>
+    </table>
+    <br>
+    <table id="tabla2">
+        <thead>
+            <tr>
+                <th>
+                    Posicion
+                </th>
+                <th>
+                    Region
+                </th>
+                <th>
+                    Cantidad de noches
+                </th>
+            </tr>
+        </thead>
+        <tbody id="body2">
+            
+        </tbody>
+    </table>
+    <br>
+    <table id="tabla3" class="tablita3">
+        <thead>
+            <tr>
+                <th class="thtd3">
+                    Cadena hotelera
+                </th>
+                <th class="thtd3">
+                    Promedio de ocupacion [%]
+                </th>
+            </tr>
+        </thead>
+        <tbody id="body3" class="">
+            
+        </tbody>
+
+    </table>
+    <br>
+    <table id="tabla4">
+        <thead>
+            <tr>
+                <th>
+                    <select id="anio4" onchange="fetchData4()"><option value="">Año</option><option>2024</option><option>2025</option><option>2026</option></select>
+                </th>
+                <th>
+                    Mes 
+                </th>
+                <th>
+                    Reservas
+                </th>
+                <th>
+                    Noches
+                </th>
+            </tr>
+        </thead>
+        <tbody id="body4">
+
+        </tbody>
+    </table>
+    <br>
+</body>
+
+<script>
+async function fetchData1(){
+const response1 = await fetch('http://172.16.5.232:3000/reporte1')
+const data1 = await response1.json();
+const body1 = document.getElementById("tabla1");
+console.log(data1);
+Object.values(data1).forEach(cosa1 =>{
+    const row1 = document.createElement("tr")
+
+    row1.innerHTML  = `
+<td>${cosa1.posicion } </td>
+<td>${cosa1.cadena } </td>
+<td>${cosa1.reservas } </td>
+<td>${cosa1.noches } </td>
+<td>${cosa1.ingreso_estimado.toFixed(2) } </td>
+
+    `
+body1.appendChild(row1);
+}); 
+}
+
+window.addEventListener("load", fetchData1);
+
+</script>
+
+<script>
+async function fetchData2(){
+const response2 = await fetch('http://172.16.5.232:3000/reporte2');
+const data2 = await response2.json();
+const body2 = document.getElementById("tabla2");
+
+console.log(data2);
+Object.values(data2).forEach(cosa2 =>{
+    const row2 = document.createElement("tr")
+
+    
+    row2.innerHTML  = `
+    <td>${cosa2.posicion} </td>
+    <td>${cosa2.region} </td>
+    <td>${cosa2.noches} </td>
+    `
+    body2.appendChild(row2);
+
+}); 
+}
+
+window.addEventListener("load", fetchData2);
+
+</script>
+
+<script>
+async function fetchData3(){
+const response3 = await fetch('http://172.16.5.232:3000/reporte3');
+const data3 = await response3.json();
+const body3 = document.getElementById("tabla3");
+
+console.log(data3);
+
+Object.values(data3).forEach(cosa3 =>{
+    const row3 = document.createElement("tr")
+
+    row3.innerHTML  = `
+<td>${cosa3.cadena } </td>
+<td>${cosa3.promedio.toFixed(3) } </td>
+    `
+    body3.appendChild(row3);
+
+}); 
+}
+
+window.addEventListener("load", fetchData3);
+
+</script>
+
+<script>
+async function fetchData4(){
+const response4 = await fetch('http://172.16.5.232:3000/reporte4');
+const data4 = await response4.json();
+const body4 = document.getElementById("body4");
+body4.innerHTML = "";
+
+console.log(data4);
+
+Object.values(data4).filter(cosa4 => cosa4.anio == anio4.value).forEach(cosa4 =>{
+    const row4 = document.createElement("tr")
+
+    row4.innerHTML  = `
+<td>${cosa4.anio } </td>
+<td>${cosa4.mes } </td>
+<td>${cosa4.nochesreservadas } </td>
+<td>${cosa4.nochestotales } </td>
+    `
+body4.appendChild(row4);
+
+}); 
+}
+
+window.addEventListener("load", fetchData4);
+
+</script>
+</html>

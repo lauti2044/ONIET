@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html,
+.main {
+    width: 100%;
+    height: 100%;
+}
+
+.main{
+    justify-content: center;
+    align-items: center;
+}
+
+.text1{
+    background-color: rgb(123, 218, 213);
+}
+
+.text2{
+    background-color: rgb(236, 161, 224);
+}

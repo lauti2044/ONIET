@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion de empresas</title>
+<style>
+     table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-left: 10%;
+
+        }
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+</style>
+
+</head>
+
+<body>
+    <h1>
+        Oniet Gestion Empresas
+    </h1>
+
+    <table id="tabla2">
+        <thead>
+        <tr>
+            <th>
+                Nombre de empresa
+            </th>
+            <th>
+                ProduccionTotal
+            </th>
+        </tr>
+        </thead>
+        <tbody id="tableBody2">
+        </tbody>
+    </table>
+
+    <br>
+
+    <table id="tabla1">
+        <thead>
+        <tr>
+            <th>
+                2
+            </th>
+            <th>
+                P3
+            </th>
+            <th>
+                hola
+            </th>
+        </tr>
+        </thead>
+        <tbody id="tableBody1">
+        </tbody>
+    </table>
+
+</body>
+</html>
+
+<script>
+    async function fetchearData2() {
+        const response2 = await fetch('http://172.16.5.114:3000/ranking2')
+        const data2 = await response2.json();
+        const tableBody2 = document.getElementById("tableBody2")
+
+    console.log(data2);
+        Object.values(data2).forEach(nombre2 => {
+            const row2 = document.createElement("tr")
+            
+            row2.innerHTML = ` 
+            <td>${nombre2.nombre} </td> 
+            <td>${nombre2.servicios} </td> 
+            `
+
+        tableBody2.appendChild(row2);
+            
+        });
+    }
+    window.addEventListener("load", fetchearData2);
+</script>
+
+<script>
+    async function fetchearData1() {
+        const response1 = await fetch('http://172.16.5.114:3000/ranking1')
+        const data1 = await response1.json();
+        const tableBody1 = document.getElementById("tableBody1")
+
+    console.log(data1);
+        Object.values(data1).forEach(nombre1 => {
+            const row1 = document.createElement("tr")
+            
+            row1.innerHTML = ` 
+            <td>${nombre1.compañia_de_seguros} </td> 
+            <td>${nombre1.total_facturado.toFixed(2)} </td> 
+            <td>${nombre1.total_cobertura_compañia_seguro.toFixed(2)} </td> 
+            `
+
+        tableBody1.appendChild(row1);
+        });
+    }
+    window.addEventListener("load", fetchearData1);
+</script>

@@ -1,0 +1,55 @@
+[
+  {
+    "id_transaccion": "TX-101",
+    "fecha": "2024-10-15",
+    "cliente": { "id": "C-01", "nombre": "Lucía Morales", "categoria": "Premium" },
+    "metodo_pago": "Tarjeta",
+    "estado": "Completada",
+    "items": [
+      { "sku": "NOTE-01", "producto": "Notebook Lenovo", "precio_unitario": 850.0, "cantidad": 1 },
+      { "sku": "MOUS-02", "producto": "Mouse Inalámbrico", "precio_unitario": 25.0, "cantidad": 2 }
+    ]
+  },
+  {
+    "id_transaccion": "TX-102",
+    "fecha": "2024-10-15",
+    "cliente": { "id": "C-02", "nombre": "Martín Gómez", "categoria": "Regular" },
+    "metodo_pago": "Transferencia",
+    "estado": "Completada",
+    "items": [
+      { "sku": "MONI-05", "producto": "Monitor 24 pulg", "precio_unitario": 210.0, "cantidad": 2 }
+    ]
+  },
+  {
+    "id_transaccion": "TX-103",
+    "fecha": "2024-10-15",
+    "cliente": { "id": "C-03", "nombre": "Sofía Rossi", "categoria": "Regular" },
+    "metodo_pago": "Efectivo",
+    "estado": "Cancelada",
+    "items": [
+      { "sku": "TECL-03", "producto": "Teclado Mecánico", "precio_unitario": 75.0, "cantidad": 1 },
+      { "sku": "HEAD-04", "producto": "Auriculares USB", "precio_unitario": 50.0, "cantidad": 1 }
+    ]
+  },
+  {
+    "id_transaccion": "TX-104",
+    "fecha": "2024-10-16",
+    "cliente": { "id": "C-01", "nombre": "Lucía Morales", "categoria": "Premium" },
+    "metodo_pago": "Tarjeta",
+    "estado": "Completada",
+    "items": [
+      { "sku": "CABL-09", "producto": "Cable HDMI 2.1", "precio_unitario": 15.0, "cantidad": 3 }
+    ]
+  },
+  {
+    "id_transaccion": "TX-105",
+    "fecha": "2024-10-16",
+    "cliente": { "id": "C-04", "nombre": "Esteban Quito", "categoria": "Premium" },
+    "metodo_pago": "Transferencia",
+    "estado": "Completada",
+    "items": [
+      { "sku": "NOTE-02", "producto": "MacBook Air", "precio_unitario": 1200.0, "cantidad": 1 },
+      { "sku": "MOUS-02", "producto": "Mouse Inalámbrico", "precio_unitario": 25.0, "cantidad": 1 }
+    ]
+  }
+]

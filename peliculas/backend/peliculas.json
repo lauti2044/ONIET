@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "titulo": "Inception",
+    "genero": "Ciencia Ficción",
+    "anio": 2010,
+    "calificacion": 8.8,
+    "presupuesto_millones": 160,
+    "recaudacion_millones": 836
+  } ,
+  {
+    "id": 2,
+    "titulo": "The Dark Knight",
+    "genero": "Acción",
+    "anio": 2008,
+    "calificacion": 9.0,
+    "presupuesto_millones": 185,
+    "recaudacion_millones": 1006
+  },
+  {
+    "id": 3,
+    "titulo": "Interstellar",
+    "genero": "Ciencia Ficción",
+    "anio": 2014,
+    "calificacion": 8.7,
+    "presupuesto_millones": 165,
+    "recaudacion_millones": 701
+  },
+  {
+    "id": 4,
+    "titulo": "Pulp Fiction",
+    "genero": "Crimen",
+    "anio": 1994,
+    "calificacion": 8.9,
+    "presupuesto_millones": 8,
+    "recaudacion_millones": 213
+  },
+  {
+    "id": 5,
+    "titulo": "Parasite",
+    "genero": "Drama",
+    "anio": 2019,
+    "calificacion": 8.5,
+    "presupuesto_millones": 11,
+    "recaudacion_millones": 263
+  },
+  {
+    "id": 6,
+    "titulo": "Whiplash",
+    "genero": "Drama",
+    "anio": 2014,
+    "calificacion": 8.5,
+    "presupuesto_millones": 3,
+    "recaudacion_millones": 49
+  },
+  {
+    "id": 7,
+    "titulo": "Mad Max: Fury Road",
+    "genero": "Acción",
+    "anio": 2015,
+    "calificacion": 8.1,
+    "presupuesto_millones": 150,
+    "recaudacion_millones": 380
+  }
+]
